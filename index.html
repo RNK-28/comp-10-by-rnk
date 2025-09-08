@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science Grade 10th</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Highlight.js CSS for a dark theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 2rem;
+        }
+        .card {
+            background-color: #2d3748;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4fd1c5;
+            margin-bottom: 1rem;
+        }
+        .card p {
+            margin-bottom: 1rem;
+        }
+        .code-block {
+            background-color: #171923;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <div class="container mx-auto p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-teal-400 mb-2">Computer Science Grade 10th</h1>
+            <p class="text-lg text-gray-400">Chapter 2 Activities: Solutions and Explanations</p>
+        </header>
+
+        <main>
+            <!-- Act 2.4 -->
+            <div class="card">
+                <h2 class="text-2xl font-semibold mb-4 text-teal-300">Act 2.4: Area of a Square</h2>
+                <p><strong>Question:</strong> Write a program that takes as input the length of one side of a square and calculates the area of the square.</p>
+                <p><strong>Explanation:</strong> This program prompts the user for the side length of a square. It then calculates the area by multiplying the side length by itself and prints the result, formatted to two decimal places.</p>
+                <pre><code class="language-cpp code-block">#include&lt;stdio.h&gt;
+
+int main() {
+    float side, area;
+    printf("Enter length of one side of square: ");
+    scanf("%f", &side);
+    area = side * side;
+    printf("The area of square is %.2f", area);
+    return 0;
+}</code></pre>
+            </div>
+
+            <!-- Act 2.5 -->
+            <div class="card">
+                <h2 class="text-2xl font-semibold mb-4 text-teal-300">Act 2.5: Total Number of Balls</h2>
+                <p><strong>Question:</strong> Write a program that takes as input the number of balls in jar A and the number of balls in jar B. The program calculates and displays the total number of balls.</p>
+                <p><strong>Explanation:</strong> The program asks for the number of balls in two separate jars. It adds these two numbers together and outputs the sum, representing the total number of balls.</p>
+                <pre><code class="language-cpp code-block">#include&lt;stdio.h&gt;
+
+int main() {
+    int jarA, jarB, sum;
+    printf("Enter the number of balls in jar A: ");
+    scanf("%d", &jarA);
+    printf("Enter the number of balls in jar B: ");
+    scanf("%d", &jarB);
+    sum = jarA + jarB;
+    printf("Total Balls is: %d", sum);
+    return 0;
+}</code></pre>
+            </div>
+
+            <!-- Act 2.6 -->
+            <div class="card">
+                <h2 class="text-2xl font-semibold mb-4 text-teal-300">Act 2.6: Shirt Discount Calculator</h2>
+                <p><strong>Question:</strong> Write a program that takes the original price of a shirt and a discount percentage from the user. The program should display the original price, the discount amount, and the final price after the discount.</p>
+                <p><strong>Explanation:</strong> This program takes the original price and a discount percentage. It calculates the discount amount by multiplying the price by the percentage. It then subtracts this amount from the original price to get the final price, and displays all three values.</p>
+                <pre><code class="language-cpp code-block">#include &lt;stdio.h&gt;
+
+int main() {
+    float original_price, discount_percentage, discount_amount, final_price;
+    printf("Enter the original price of the shirt: ");
+    scanf("%f", &original_price);
+    printf("Enter the discount percentage: ");
+    scanf("%f", &discount_percentage);
+
+    discount_amount = original_price * (discount_percentage / 100.0);
+    final_price = original_price - discount_amount;
+
+    printf("\n--- Price Details ---\n");
+    printf("Original Price: $%.2f\n", original_price);
+    printf("Discount (%.0f%%): -$%.2f\n", discount_percentage, discount_amount);
+    printf("Price after discount: $%.2f\n", final_price);
+
+    return 0;
+}</code></pre>
+            </div>
+
+            <!-- Act 2.7 -->
+            <div class="card">
+                <h2 class="text-2xl font-semibold mb-4 text-teal-300">Act 2.7: Product of Digits</h2>
+                <p><strong>Question:</strong> Write a program that takes a 2-digit number from the user, computes the product of both digits, and shows the output.</p>
+                <p><strong>Explanation:</strong> The program takes a two-digit number. It separates the first digit using integer division by 10 and the second digit using the modulo operator. It then multiplies these two digits and prints the result.</p>
+                <pre><code class="language-cpp code-block">#include &lt;stdio.h&gt;
+
+int main() {
+    int number;
+    int first_digit, second_digit;
+    int product;
+    printf("Enter a 2-digit number: ");
+    scanf("%d", &number);
+
+    if (number &gt;= 10 && number &lt;= 99) {
+        first_digit = number / 10;
+        second_digit = number % 10;
+        product = first_digit * second_digit;
+        
+        printf("The number is %d\n", number);
+        printf("The first digit is: %d\n", first_digit);
+        printf("The second digit is: %d\n", second_digit);
+        printf("The product of the digits is: %d\n", product);
+    } else {
+        printf("Invalid input. Please enter a valid 2-digit number.\n");
+    }
+
+    return 0;
+}</code></pre>
+            </div>
+
+            <!-- Act 2.8 -->
+            <div class="card">
+                <h2 class="text-2xl font-semibold mb-4 text-teal-300">Act 2.8: Seconds to Time Conversion</h2>
+                <p><strong>Question:</strong> Write a program that takes input in seconds and converts it into hours, minutes, and seconds.</p>
+                <p><strong>Explanation:</strong> This program takes a total number of seconds. It uses integer division and the modulo operator to convert the seconds into hours, minutes, and the remaining seconds, then displays the converted time.</p>
+                <pre><code class="language-cpp code-block">#include &lt;stdio.h&gt;
+
+int main() {
+    int totalSeconds;
+    int hours, minutes, seconds;
+
+    printf("Enter total seconds: ");
+    scanf("%d", &totalSeconds);
+
+    hours = totalSeconds / 3600;
+    minutes = (totalSeconds % 3600) / 60;
+    seconds = totalSeconds % 60;
+
+    printf("Equivalent Time = %d hours, %d minutes, %d seconds.\n", hours, minutes, seconds);
+    return 0;
+}</code></pre>
+            </div>
+        </main>
+    </div>
+	<h2 class="text-2xl font-semibold mb-4 text-teal-300">Created and Designed by Najaf</h2>
+
+    <!-- Highlight.js to enable syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>
+        // Tell Highlight.js to find and highlight all code blocks
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
